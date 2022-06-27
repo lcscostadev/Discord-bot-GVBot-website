@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #171A21;
+    --dn-color: #474B64;
+    --secondary-color: #911710;
+    --txt-color: #ffffffd6;
+
+    --font: 'Roboto Mono', monospace;
+    --font-heading: 'Roboto', sans-serif;
+}
+
+/* Utility class */
+.mg-bt {
+    margin-bottom: 100px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+}
+
+span {
+    color: var(--secondary-color);
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--txt-color);
+    font-family: var(--font);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: auto;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+nav a {
+    background-image: linear-gradient(to right,
+            #911710,
+            #911710 50%,
+            #ffffffd6 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:before {
+    content: '';
+    background: #911710;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-position: 0;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+/* Hero section */
+
+main {
+    max-width: 1280px;
+    margin: auto;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.desc-text h1 {
+    padding: 10px 0;
+    font-size: 3em;
+    font-weight: 300;
+}
+
+.desc-text p {
+    max-width: 650px;
+}
+
+
+.image-text img {
+    max-width: 100%;
+    width: 300px;
+}
+
+.zoom {
+    padding: 50px 0;
+    transition: transform .2s;
+    /* Animation */
+
+}
+
+.zoom:hover {
+    transform: scale(1.2);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+/* Button */
+/* From uiverse.io by @adamgiebl */
+.cssbuttons-io-button {
+    background: var(--dn-color);
+    color: white;
+    font-family: inherit;
+    margin: 20px 0;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em var(--dn-color);
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+
+}
+
+.cssbuttons-io-button .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em var(--dn-color);
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+    width: 1.4em;
+    transition: transform 0.3s;
+    color: var(--dn-color);
+}
+
+.cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+}
+
+
+/* // ————————— // ———————— ———// Icons section //——— ———————— // ————————— // */
+
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 0;
+}
+
+.icon-container input {
+    max-width: 60px;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icons img {
+    max-width: 100%;
+    width: 70px;
+    cursor: pointer;
+}
+
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 70px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity ease-in-out .6s;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+/* // ————————— // ———————— ———// Slide Section //——— ———————— // ————————— // */
+
+.slide-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.text-slide p {
+    padding: 10px 0;
+    max-width: 500px;
+}
+
+.list-slide {
+    padding-left: 20px;
+    list-style: circle;
+}
+
+.image-slide img {
+    max-width: 100%;
+    width: 700px;
+}
+
+
+
+/* // ————————— // ———————— ———// Footer //——— ———————— // ————————— // */
+
+
+.footer-container {
+    background: var(--heading-color);
+}
+
+.content-2 a:hover {
+    text-decoration: underline;
+}
+
+#footer p,
+#footer h4,
+.icon,
+#footer a {
+    color: white;
+}
+
+footer {
+    max-width: 1280px;
+    margin: 60px auto;
+}
+
+.column-footer {
+    padding: 40px 0 5px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.content-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-1 img {
+    width: 70px;
+}
+
+.content-1 p {
+    max-width: 300px;
+}
+
+.content-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.content-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-3 p {
+    max-width: 500px;
+}
+
+.copyright {
+    padding: 20px;
+    text-align: center;
+    border-top: 4px solid var(--secondary-color);
+    color: gray;
+}
+
+/* // ————————— // ———————— ———// Footer Input //——— ———————— // ————————— // */
+
+/* From uiverse.io by @alexruix */
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    min-height: 50px;
+    max-width: 600px;
+    padding: 0 1rem;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid var(--dn-color);
+    border-radius: 6px 0 0 6px;
+    background-color: transparent;
+}
+
+.button--submit {
+    min-height: 50px;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: var(--dn-color);
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+
+.button--submit:hover {
+    background-color: #911610b6;
+}
+
+.input:focus,
+.input:focus-visible {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+.icon {
+    transition: all .4s;
+    padding: 0 8px;
+}
+
+.icon:hover {
+    color: var(--secondary-color);
+}
+
+
+/* // ————————— // ———————— ———// Media Queries //——— ———————— // ————————— // */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .desc-text p {
+        max-width: 450px;
+        padding-bottom: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cssbuttons-io-button {
+        margin: auto;
+    }
+
+    .zoom {
+        padding: 50px 0;
+        transition: transform .2s;
+        /* Animation */
+        width: 300px;
+        height: 300px;
+
+    }
+
+    .icons img {
+        flex-wrap: wrap;
+        margin: 0 20px;
+        max-width: 70px;
+    }
+
+    .slide-section {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    .image-slide img {
+        width: 500px;
+    }
+
+    .text-slide p,
+    h2 {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .column-footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .input-group {
+        justify-content: center;
+    }
+
+    #footer h3,
+    h4 {
+        color: var(--secondary-color);
+    }
+}
+
+@media (max-width: 375px) {
+    .desc-text p {
+        max-width: 280px;
+        font-size: 0.75em;
+    }
+
+    .desc-text h1 {
+        max-width: 280px;
+        font-size: 1.875em;
+    }
+
+    .zoom {
+        display: none;
+    }
+
+    .icons img {
+        flex-wrap: wrap;
+        margin: 0 20px;
+        max-width: 40px;
+    }
+
+
+    .text-slide p {
+        max-width: 280px;
+        padding-bottom: 20px;
+    }
+
+    .content-3 p {
+        max-width: 280px;
+    }
+
+    .input {
+        max-width: 100px;
+    }
+
+    #footer p {
+        font-size: 0.75em;
+    }
+}
