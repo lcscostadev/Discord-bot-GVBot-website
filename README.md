@@ -1,3 +1,17 @@
+
+# Discord Bot - GVBOT
+
+A discord bot project that has several features through API's.
+
+## Technologies used
+- HTML
+- CSS
+- JavaScript
+
+## Desktop
+
+## Mobile
+
 Here is the author link for the icons
 
 <a href="https://www.flaticon.com/free-icons/education" title="education icons">Education icons created by Freepik -
