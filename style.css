@@ -104,7 +104,6 @@ nav a:hover::before {
     align-items: center;
 }
 
-
 .nav-links {
     display: flex;
     gap: 30px;
